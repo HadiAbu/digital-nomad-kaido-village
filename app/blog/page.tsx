@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Facebook, Instagram, Linkedin, Twitter, Menu } from "lucide-react"
 import Link from "next/link"
 
 export default function BlogPage() {
@@ -53,6 +54,33 @@ export default function BlogPage() {
               Contact
             </Link>
           </nav>
+          {/* Mobile navigation dropdown menu */}
+          <div className="md:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="text-[#171F29]">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link href="/" className="w-full cursor-pointer">
+                    Home
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/blog" className="w-full cursor-pointer font-semibold">
+                    Blog
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/contact" className="w-full cursor-pointer">
+                    Contact
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </header>
 
