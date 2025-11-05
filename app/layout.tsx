@@ -14,8 +14,8 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Kaido Village",
   description:
-    "Work, Live, and Connect in Chiang Mai's Premier Coworking Space",
-    generator: 'v0.app'
+    "Work, Live, and Connect in Kaido Village's Premier Coworking Space",
+  generator: "v0.app",
 };
 
 export default function RootLayout({

@@ -1,33 +1,33 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export function SplashScreen() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [shouldRender, setShouldRender] = useState(true)
+  const [isVisible, setIsVisible] = useState(false);
+  const [shouldRender, setShouldRender] = useState(true);
 
   useEffect(() => {
-    const hasSeenSplash = sessionStorage.getItem("splash-screen-seen")
+    const hasSeenSplash = sessionStorage.getItem("splash-screen-seen");
 
     if (hasSeenSplash) {
-      setShouldRender(false)
-      return
+      setShouldRender(false);
+      return;
     }
 
     // Trigger animation after mount
-    setTimeout(() => setIsVisible(true), 50)
+    setTimeout(() => setIsVisible(true), 50);
 
     // Auto-hide after 3 seconds
     setTimeout(() => {
-      setIsVisible(false)
+      setIsVisible(false);
       setTimeout(() => {
-        setShouldRender(false)
-        sessionStorage.setItem("splash-screen-seen", "true")
-      }, 500)
-    }, 3000)
-  }, [])
+        setShouldRender(false);
+        sessionStorage.setItem("splash-screen-seen", "true");
+      }, 500);
+    }, 3000);
+  }, []);
 
-  if (!shouldRender) return null
+  if (!shouldRender) return null;
 
   return (
     <div
@@ -48,9 +48,9 @@ export function SplashScreen() {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
-          Your Digital Nomad Home in Chiang Mai
+          Your Digital Nomad Home in Kaido Village
         </p>
       </div>
     </div>
-  )
+  );
 }

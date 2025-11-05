@@ -12,11 +12,11 @@ const Testimonial = () => {
         </div>
         <blockquote className="text-2xl font-medium mb-6 leading-relaxed text-foreground">
           "This space transformed my remote work experience. The community is
-          amazing, and Chiang Mai is unbeatable."
+          amazing, and Kaido Village is unbeatable."
         </blockquote>
         <div className="text-sm text-muted-foreground">
           <p className="font-semibold text-foreground">Sarah Chen</p>
-          <p>@sarahchen • 3d • Chiang Mai</p>
+          <p>@sarahchen • 3d • Kaido Village</p>
         </div>
       </div>
     </section>

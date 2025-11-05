@@ -1,14 +1,19 @@
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Facebook, Instagram, Linkedin, Twitter, Menu } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Facebook, Instagram, Linkedin, Twitter, Menu } from "lucide-react";
+import Link from "next/link";
 
 export default function BlogPage() {
   const articles = [
     {
       id: 1,
-      title: "10 Tips for Digital Nomads in Chiang Mai",
+      title: "10 Tips for Digital Nomads in Kaido Village",
       excerpt:
         "Discover the best practices for living and working remotely in one of Southeast Asia's most popular digital nomad destinations.",
       date: "March 15, 2025",
@@ -33,7 +38,7 @@ export default function BlogPage() {
       author: "Emma Rodriguez",
       category: "Work",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-[#DFE5E8]">
@@ -44,13 +49,19 @@ export default function BlogPage() {
             Kaido Village
           </Link>
           <nav className="hidden md:flex items-center gap-8 ml-auto">
-            <Link href="/" className="text-sm text-[#171F29] hover:text-[#913d16]">
+            <Link
+              href="/"
+              className="text-sm text-[#171F29] hover:text-[#913d16]"
+            >
               Home
             </Link>
             <Link href="/blog" className="text-sm text-[#913d16] font-semibold">
               Blog
             </Link>
-            <Link href="/contact" className="text-sm text-[#171F29] hover:text-[#913d16]">
+            <Link
+              href="/contact"
+              className="text-sm text-[#171F29] hover:text-[#913d16]"
+            >
               Contact
             </Link>
           </nav>
@@ -69,7 +80,10 @@ export default function BlogPage() {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/blog" className="w-full cursor-pointer font-semibold">
+                  <Link
+                    href="/blog"
+                    className="w-full cursor-pointer font-semibold"
+                  >
                     Blog
                   </Link>
                 </DropdownMenuItem>
@@ -89,7 +103,8 @@ export default function BlogPage() {
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h1 className="text-5xl font-bold mb-6 text-[#DFE5E8]">Blog</h1>
           <p className="text-lg text-[#DFE5E8] leading-relaxed">
-            Stories, tips, and insights from the digital nomad community at Kaido Village
+            Stories, tips, and insights from the digital nomad community at
+            Kaido Village
           </p>
         </div>
       </section>
@@ -105,7 +120,11 @@ export default function BlogPage() {
               >
                 <div className="bg-[#25483B] aspect-[16/9] flex items-center justify-center">
                   <div className="w-16 h-16 bg-[#171F29] rounded flex items-center justify-center">
-                    <svg className="w-8 h-8 text-[#DFE5E8]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="w-8 h-8 text-[#DFE5E8]"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path
                         fillRule="evenodd"
                         d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
@@ -115,9 +134,15 @@ export default function BlogPage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <div className="text-xs uppercase tracking-wider text-[#913d16] mb-2">{article.category}</div>
-                  <h3 className="text-xl font-bold mb-3 text-[#171F29]">{article.title}</h3>
-                  <p className="text-[#70473D] text-sm mb-4 leading-relaxed">{article.excerpt}</p>
+                  <div className="text-xs uppercase tracking-wider text-[#913d16] mb-2">
+                    {article.category}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-[#171F29]">
+                    {article.title}
+                  </h3>
+                  <p className="text-[#70473D] text-sm mb-4 leading-relaxed">
+                    {article.excerpt}
+                  </p>
                   <div className="flex items-center justify-between text-sm text-[#70473D]">
                     <span>{article.author}</span>
                     <span>{article.date}</span>
@@ -140,9 +165,12 @@ export default function BlogPage() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="text-xl font-bold mb-4 text-[#DFE5E8]">Kaido Village</div>
+              <div className="text-xl font-bold mb-4 text-[#DFE5E8]">
+                Kaido Village
+              </div>
               <p className="text-sm text-[#DFE5E8] leading-relaxed">
-                Your coliving space in the heart of Chiang Mai. Spaces made for digital nomads.
+                Your coliving space in the heart of Kaido Village. Spaces made
+                for digital nomads.
               </p>
             </div>
 
@@ -150,22 +178,34 @@ export default function BlogPage() {
               <h4 className="font-semibold mb-4 text-[#DFE5E8]">Quick Links</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/" className="text-[#DFE5E8] hover:text-[#913d16]">
+                  <Link
+                    href="/"
+                    className="text-[#DFE5E8] hover:text-[#913d16]"
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-[#DFE5E8] hover:text-[#913d16]">
+                  <Link
+                    href="#"
+                    className="text-[#DFE5E8] hover:text-[#913d16]"
+                  >
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-[#DFE5E8] hover:text-[#913d16]">
+                  <Link
+                    href="#"
+                    className="text-[#DFE5E8] hover:text-[#913d16]"
+                  >
                     Rooms
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-[#DFE5E8] hover:text-[#913d16]">
+                  <Link
+                    href="#"
+                    className="text-[#DFE5E8] hover:text-[#913d16]"
+                  >
                     Amenities
                   </Link>
                 </li>
@@ -176,22 +216,34 @@ export default function BlogPage() {
               <h4 className="font-semibold mb-4 text-[#DFE5E8]">Resources</h4>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/blog" className="text-[#DFE5E8] hover:text-[#913d16]">
+                  <Link
+                    href="/blog"
+                    className="text-[#DFE5E8] hover:text-[#913d16]"
+                  >
                     Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-[#DFE5E8] hover:text-[#913d16]">
+                  <Link
+                    href="#"
+                    className="text-[#DFE5E8] hover:text-[#913d16]"
+                  >
                     FAQ
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-[#DFE5E8] hover:text-[#913d16]">
+                  <Link
+                    href="/contact"
+                    className="text-[#DFE5E8] hover:text-[#913d16]"
+                  >
                     Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-[#DFE5E8] hover:text-[#913d16]">
+                  <Link
+                    href="#"
+                    className="text-[#DFE5E8] hover:text-[#913d16]"
+                  >
                     Careers
                   </Link>
                 </li>
@@ -234,5 +286,5 @@ export default function BlogPage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }

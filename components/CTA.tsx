@@ -10,7 +10,7 @@ const CTA = () => {
         </h2>
         <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
           Join our thriving community of remote workers and experience the
-          perfect blend of productivity and adventure in Chiang Mai.
+          perfect blend of productivity and adventure in Kaido Village.
         </p>
         <div className="flex gap-4 justify-center mb-12">
           <Button className="bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer">

@@ -11,7 +11,7 @@ const Footer = () => {
               Kaido Village
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Your coliving space in the heart of Chiang Mai. Spaces made for
+              Your coliving space in the heart of Kaido Village. Spaces made for
               digital nomads.
             </p>
           </div>
