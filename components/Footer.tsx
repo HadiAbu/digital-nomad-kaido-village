@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Instagram } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -29,26 +29,26 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="https://www.nomad-lab.jp/en/about"
                   className="text-muted-foreground hover:text-accent cursor-pointer"
                 >
                   About
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/rooms"
                   className="text-muted-foreground hover:text-accent cursor-pointer"
                 >
                   Rooms
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
-                  href="/amenities"
+                  href="https://www.nomad-lab.jp/en"
                   className="text-muted-foreground hover:text-accent cursor-pointer"
                 >
-                  Amenities
+                  Properties
                 </Link>
               </li>
             </ul>
@@ -57,22 +57,14 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-foreground">Resources</h4>
             <ul className="space-y-2 text-sm">
-              <li>
+              {/* <li>
                 <Link
                   href="/blog"
                   className="text-muted-foreground hover:text-accent cursor-pointer"
                 >
                   Blog
                 </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="text-muted-foreground hover:text-accent cursor-pointer"
-                >
-                  FAQ
-                </Link>
-              </li>
+              </li>*/}
               <li>
                 <Link
                   href="/contact"
@@ -83,10 +75,19 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/careers"
+                  href="https://www.nomad-lab.jp/en/privacy"
                   className="text-muted-foreground hover:text-accent cursor-pointer"
                 >
-                  Careers
+                  Privacy Policy
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="https://www.nomad-lab.jp/en/terms"
+                  className="text-muted-foreground hover:text-accent cursor-pointer"
+                >
+                  Terms of Service
                 </Link>
               </li>
             </ul>
@@ -96,55 +97,17 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-foreground">Connect</h4>
             <div className="flex gap-3 mb-4">
               <Link
-                href="#"
-                className="text-muted-foreground hover:text-accent cursor-pointer"
-              >
-                <Facebook className="w-5 h-5" />
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-accent cursor-pointer"
-              >
-                <Twitter className="w-5 h-5" />
-              </Link>
-              <Link
-                href="#"
+                href="https://www.instagram.com/kaido_village/"
                 className="text-muted-foreground hover:text-accent cursor-pointer"
               >
                 <Instagram className="w-5 h-5" />
-              </Link>
-              <Link
-                href="#"
-                className="text-muted-foreground hover:text-accent cursor-pointer"
-              >
-                <Linkedin className="w-5 h-5" />
               </Link>
             </div>
           </div>
         </div>
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>© 2025 Kaido Village. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <Link
-              href="/privacy-policy"
-              className="hover:text-accent cursor-pointer"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms-of-service"
-              className="hover:text-accent cursor-pointer"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              href="/cookie-settings"
-              className="hover:text-accent cursor-pointer"
-            >
-              Cookie Settings
-            </Link>
-          </div>
+          <p>© 2025 NOMAD LAB. All rights reserved.</p>
         </div>
       </div>
     </footer>

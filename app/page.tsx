@@ -11,10 +11,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Hero from "@/components/Hero";
 import Discount from "@/components/Discount";
-import HowToBook from "@/components/HowToBook";
+import Properties from "@/components/Properties";
 import CTA from "@/components/CTA";
 import Amenities from "@/components/Amenities";
-import Testimonial from "@/components/Testimonial";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -38,12 +37,12 @@ export default function Home() {
                 >
                   Home
                 </Link>
-                <Link
+                {/* <Link
                   href="/blog"
                   className="text-sm text-foreground hover:text-accent cursor-pointer"
                 >
                   Blog
-                </Link>
+                </Link> */}
                 <Link
                   href="/contact"
                   className="text-sm text-foreground hover:text-accent cursor-pointer"
@@ -69,11 +68,11 @@ export default function Home() {
                       Home
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
+                  {/* <DropdownMenuItem asChild>
                     <Link href="/blog" className="cursor-pointer w-full">
                       Blog
                     </Link>
-                  </DropdownMenuItem>
+                  </DropdownMenuItem> */}
                   <DropdownMenuItem asChild>
                     <Link href="/contact" className="cursor-pointer w-full">
                       Contact
@@ -91,12 +90,12 @@ export default function Home() {
         <Discount />
 
         {/* How to Book Section */}
-        <HowToBook />
+        <Properties />
         {/* Amenities Section */}
         <Amenities />
 
         {/* Testimonial Section */}
-        <Testimonial />
+        {/* <Testimonial /> */}
 
         {/* CTA Section */}
         <CTA />

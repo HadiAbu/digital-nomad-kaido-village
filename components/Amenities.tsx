@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 
@@ -22,38 +23,34 @@ const Amenities = () => {
               title: "High Speed Internet",
               description:
                 "Fast and reliable fiber optic WiFi to keep you connected and productive.",
+              img: "/homepage/internet.jpg",
             },
             {
               title: "Co-Working Space",
               description:
                 "Dedicated desks and quiet zones designed for focused remote work.",
+              img: "/homepage/cowork.jpeg",
             },
             {
               title: "Communal Kitchen",
               description:
                 "Fully equipped shared kitchen where you can cook and socialize.",
+              img: "/homepage/checkin.jpg",
             },
             {
               title: "Social Events",
               description:
                 "Regular meetups, workshops, and activities to help you connect with fellow nomads.",
+              img: "/homepage/social.jpg",
             },
           ].map((amenity, index) => (
             <Card key={index} className="p-6 text-center border-border bg-card">
               <div className="bg-muted/20 aspect-square rounded-lg mb-6 flex items-center justify-center">
-                <div className="w-16 h-16 bg-muted/30 rounded flex items-center justify-center">
-                  <svg
-                    className="w-8 h-8 text-muted-foreground"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
+                <img
+                  className="rounded-lg h-full w-full object-cover"
+                  src={amenity.img}
+                  alt="amenity-icon"
+                />
               </div>
               <h3 className="text-xl font-bold mb-3 text-card-foreground">
                 {amenity.title}
@@ -66,15 +63,19 @@ const Amenities = () => {
         </div>
 
         <div className="flex gap-4 justify-center">
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer">
-            Learn amenities
-          </Button>
-          <Button
-            variant="outline"
-            className="border-border text-foreground hover:bg-muted/20 bg-transparent cursor-pointer"
-          >
-            Gallery
-          </Button>
+          <Link href="https://www.nomad-lab.jp/en">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer">
+              Learn amenities
+            </Button>
+          </Link>
+          <Link href="https://photos.google.com/share/AF1QipPwh2vL1Wq41eIwHgxhd-LLfLpjZR8tW15MwMlMiWG9YKoaBmswpcoJmUcbAtnrpw?key=Z0NEbWZBeFU5YVdISHlmVlVrUTJtZVNfckkycExn">
+            <Button
+              variant="outline"
+              className="border-border text-foreground hover:bg-muted/20 bg-transparent cursor-pointer"
+            >
+              Gallery
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

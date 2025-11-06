@@ -12,18 +12,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  Mail,
-  Phone,
-  MapPin,
-  Menu,
-} from "lucide-react";
+import { Instagram, Mail, Phone, MapPin, Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import Footer from "@/components/Footer";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -50,6 +42,8 @@ export default function ContactPage() {
     });
   };
 
+  const imageUrl = "/contact/contact.jpg";
+
   return (
     <div className="min-h-screen bg-[#DFE5E8]">
       {/* Header */}
@@ -65,12 +59,12 @@ export default function ContactPage() {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               href="/blog"
               className="text-sm text-[#171F29] hover:text-[#913d16]"
             >
               Blog
-            </Link>
+            </Link> */}
             <Link
               href="/contact"
               className="text-sm text-[#913d16] font-semibold"
@@ -92,11 +86,11 @@ export default function ContactPage() {
                     Home
                   </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                {/* <DropdownMenuItem asChild>
                   <Link href="/blog" className="w-full cursor-pointer">
                     Blog
                   </Link>
-                </DropdownMenuItem>
+                </DropdownMenuItem> */}
                 <DropdownMenuItem asChild>
                   <Link
                     href="/contact"
@@ -112,7 +106,10 @@ export default function ContactPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-[#171F29] py-20">
+      <section
+        className="bg-[#171F29] py-20"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      >
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h1 className="text-5xl font-bold mb-6 text-[#DFE5E8]">Contact Us</h1>
           <p className="text-lg text-[#DFE5E8] leading-relaxed">
@@ -238,7 +235,8 @@ export default function ContactPage() {
                         Location
                       </h3>
                       <p className="text-sm text-[#70473D]">
-                        123 Nimman Road, Kaido Village, Thailand 50200
+                        885 Mikuni, Yuzawa-machi, Minamiuonuma-gun, Niigata,
+                        Japan
                       </p>
                     </div>
                   </div>
@@ -254,7 +252,7 @@ export default function ContactPage() {
                         Email
                       </h3>
                       <p className="text-sm text-[#70473D]">
-                        hello@kaidovillage.com
+                        info@souq-hub.co.jp
                       </p>
                     </div>
                   </div>
@@ -269,9 +267,7 @@ export default function ContactPage() {
                       <h3 className="font-semibold mb-1 text-[#171F29]">
                         Phone
                       </h3>
-                      <p className="text-sm text-[#70473D]">
-                        +66 (0) 123 456 789
-                      </p>
+                      <p className="text-sm text-[#70473D]">+84 123 456 789</p>
                     </div>
                   </div>
                 </Card>
@@ -281,28 +277,10 @@ export default function ContactPage() {
                 <h3 className="font-semibold mb-4 text-[#171F29]">Follow Us</h3>
                 <div className="flex gap-3">
                   <Link
-                    href="#"
-                    className="bg-[#913d16] p-3 rounded-lg text-white hover:bg-[#70473D] transition-colors"
-                  >
-                    <Facebook className="w-5 h-5" />
-                  </Link>
-                  <Link
-                    href="#"
-                    className="bg-[#913d16] p-3 rounded-lg text-white hover:bg-[#70473D] transition-colors"
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </Link>
-                  <Link
-                    href="#"
+                    href="https://www.instagram.com/kaido_village/"
                     className="bg-[#913d16] p-3 rounded-lg text-white hover:bg-[#70473D] transition-colors"
                   >
                     <Instagram className="w-5 h-5" />
-                  </Link>
-                  <Link
-                    href="#"
-                    className="bg-[#913d16] p-3 rounded-lg text-white hover:bg-[#70473D] transition-colors"
-                  >
-                    <Linkedin className="w-5 h-5" />
                   </Link>
                 </div>
               </div>
@@ -312,130 +290,7 @@ export default function ContactPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[#25483B] py-12 bg-[#171F29]">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="text-xl font-bold mb-4 text-[#DFE5E8]">
-                Kaido Village
-              </div>
-              <p className="text-sm text-[#DFE5E8] leading-relaxed">
-                Your coliving space in the heart of Kaido Village. Spaces made
-                for digital nomads.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-[#DFE5E8]">Quick Links</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link
-                    href="/"
-                    className="text-[#DFE5E8] hover:text-[#913d16]"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-[#DFE5E8] hover:text-[#913d16]"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-[#DFE5E8] hover:text-[#913d16]"
-                  >
-                    Rooms
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-[#DFE5E8] hover:text-[#913d16]"
-                  >
-                    Amenities
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-[#DFE5E8]">Resources</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link
-                    href="/blog"
-                    className="text-[#DFE5E8] hover:text-[#913d16]"
-                  >
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-[#DFE5E8] hover:text-[#913d16]"
-                  >
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-[#DFE5E8] hover:text-[#913d16]"
-                  >
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="text-[#DFE5E8] hover:text-[#913d16]"
-                  >
-                    Careers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-[#DFE5E8]">Connect</h4>
-              <div className="flex gap-3 mb-4">
-                <Link href="#" className="text-[#DFE5E8] hover:text-[#913d16]">
-                  <Facebook className="w-5 h-5" />
-                </Link>
-                <Link href="#" className="text-[#DFE5E8] hover:text-[#913d16]">
-                  <Twitter className="w-5 h-5" />
-                </Link>
-                <Link href="#" className="text-[#DFE5E8] hover:text-[#913d16]">
-                  <Instagram className="w-5 h-5" />
-                </Link>
-                <Link href="#" className="text-[#DFE5E8] hover:text-[#913d16]">
-                  <Linkedin className="w-5 h-5" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-[#25483B] pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-[#DFE5E8]">
-            <p>© 2025 Kaido Village. All rights reserved.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <Link href="#" className="hover:text-[#913d16]">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-[#913d16]">
-                Terms of Service
-              </Link>
-              <Link href="#" className="hover:text-[#913d16]">
-                Cookie Settings
-              </Link>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
