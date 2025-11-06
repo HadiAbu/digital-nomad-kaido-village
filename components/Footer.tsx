@@ -54,7 +54,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="https://www.nomad-lab.jp/en/about"
+                  href="/about"
                   className="text-muted-foreground hover:text-accent cursor-pointer"
                 >
                   About
