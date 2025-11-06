@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 // Renamed from App to Hero, set up for default export in a Next.js context.
 // In a real Next.js app, you would use the <Image> component for the background.
@@ -34,12 +35,16 @@ const Hero = () => {
             springs and local culture.
           </p>
           <div className="flex gap-4 justify-center flex-col sm:flex-row">
-            <Button className="bg-orange-500 text-white hover:bg-orange-600 ring-2 ring-orange-500 hover:ring-orange-600">
-              Book now
-            </Button>
-            <Button className="border-2 border-white text-white hover:bg-white/20 bg-transparent ring-2 ring-transparent">
-              Learn more
-            </Button>
+            <Link href="https://www.nomad-lab.jp/en">
+              <Button className="bg-orange-500 text-white hover:bg-orange-600 ring-2 ring-orange-500 hover:ring-orange-600">
+                Book now
+              </Button>
+            </Link>
+            <Link href="https://www.nomad-lab.jp/en/about">
+              <Button className="border-2 border-white text-white hover:bg-white/20 bg-transparent ring-2 ring-transparent">
+                Learn more
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
