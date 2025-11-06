@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { SplashScreen } from "@/components/splash-screen";
-import { NewsletterModal } from "@/components/newsletter-modal";
+//import { NewsletterModal } from "@/components/newsletter-modal";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <SplashScreen />
-      <NewsletterModal />
+      {/*  <NewsletterModal />  */}
 
       <div className="min-h-screen">
         {/* Header */}
