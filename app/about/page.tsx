@@ -12,13 +12,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Instagram, Mail, Phone, MapPin, Menu } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { Instagram, Mail, Phone, MapPin, Menu } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-export default function ContactPage() {
+export default function AboutPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

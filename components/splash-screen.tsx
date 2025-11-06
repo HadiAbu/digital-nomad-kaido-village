@@ -48,7 +48,7 @@ export function SplashScreen() {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
           }`}
         >
-          Your Digital Nomad Home in Kaido Village
+          Your Digital Nomad Home in Yuzawa, Japan
         </p>
       </div>
     </div>
