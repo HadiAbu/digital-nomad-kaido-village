@@ -6,16 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Instagram, Mail, Phone, MapPin, Menu } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import Footer from "@/components/Footer";
+import Footer, { DiscordIcon } from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export default function ContactPage() {
@@ -157,6 +151,19 @@ export default function ContactPage() {
                   Send Message
                 </Button>
               </form>
+              <div className="pt-15">
+                <h2 className="text-3xl font-bold mb-6 text-[#171F29]">
+                  Schedule a Call
+                </h2>
+                <Link
+                  href="https://calendly.com/kaidovillage/30min"
+                  target="_blank"
+                  rel="noopener hadiabuhamed"
+                  className="text-[#913d16] underline hover:text-[#70473D]"
+                >
+                  https://calendar.app.google/KDpsg5bzkFkktaLcA
+                </Link>
+              </div>
             </div>
 
             {/* Contact Information */}
@@ -220,12 +227,21 @@ export default function ContactPage() {
 
               <div className="mt-8">
                 <h3 className="font-semibold mb-4 text-[#171F29]">Follow Us</h3>
-                <div className="flex gap-3">
+                <div className="flex gap-5">
                   <Link
                     href="https://www.instagram.com/kaido_village/"
                     className="bg-[#913d16] p-3 rounded-lg text-white hover:bg-[#70473D] transition-colors"
                   >
-                    <Instagram className="w-5 h-5" />
+                    <Instagram className="w-5" />
+                  </Link>
+                  <Link
+                    href="https://discord.gg/vssEq8rNKw"
+                    className="text-muted-foreground hover:text-accent cursor-pointer"
+                  >
+                    <DiscordIcon
+                      size={49}
+                      className="text-muted-foreground hover:text-purple-400"
+                    />
                   </Link>
                 </div>
               </div>

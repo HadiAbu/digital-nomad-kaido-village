@@ -1,6 +1,3 @@
-import React from "react";
-import { Button } from "./ui/button";
-
 const Discount = () => {
   return (
     <section className="py-20 bg-background">

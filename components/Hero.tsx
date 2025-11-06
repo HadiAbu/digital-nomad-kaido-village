@@ -1,28 +1,17 @@
-import React from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
 // Renamed from App to Hero, set up for default export in a Next.js context.
-// In a real Next.js app, you would use the <Image> component for the background.
 const Hero = () => {
-  // Placeholder image URL relevant to Echigo-Yuzawa (Snowy mountains)
   const imageUrl = "/homepage/hero.jpg";
 
   return (
     <div className="min-h-screen bg-gray-100 font-inter">
       <section
-        // 1. Set the background image and styling
         className="relative py-32 md:py-48 bg-cover bg-center"
         style={{ backgroundImage: `url(${imageUrl})` }}
       >
-        {/* 2. Overlay: Absolute positioning, spanning the full section.
-                  We use bg-gray-900 (dark color) and opacity-50 (50% transparency)
-                */}
         <div className="absolute inset-0 bg-gray-900 opacity-50"></div>
-
-        {/* 3. Content: Must be relative and have a high z-index 
-                  to sit above the overlay. Text is set to white.
-                */}
         <div className="relative container mx-auto px-6 text-center max-w-4xl text-white z-10">
           <h1 className="text-4xl sm:text-6xl font-extrabold mb-6 tracking-tight text-balance">
             Live & Work in Echigo-Yuzawa <br className="hidden sm:block" />
