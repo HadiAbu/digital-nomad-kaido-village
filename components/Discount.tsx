@@ -19,7 +19,7 @@ const Discount = () => {
               settle in, build connections, and make Kaido Village your
               temporary home base while you work remotely.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer">
                 Learn more
               </Button>
@@ -29,7 +29,7 @@ const Discount = () => {
               >
                 Apply
               </Button>
-            </div>
+            </div> */}
           </div>
           <div className="bg-muted/20  rounded-lg flex items-center justify-center border border-border">
             <img

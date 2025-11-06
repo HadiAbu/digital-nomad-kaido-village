@@ -1,240 +1,320 @@
-"use client";
-
-import type React from "react";
-
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import Link from "next/link";
-import { useState } from "react";
-import { Instagram, Mail, Phone, MapPin, Menu } from "lucide-react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About Kaido | Digital Nomad Hostels in Niigata",
+  description:
+    "Discover Kaido - a network of nomad-friendly stays in Niigata, Japan, designed for long stays that balance productivity and play.",
+};
 
 export default function AboutPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
-    alert("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const imageUrl = "/contact/contact.jpg";
+  const imageUrl = "/about/about.jpg";
 
   return (
-    <div className="min-h-screen bg-[#DFE5E8]">
-      {/* Header */}
+    <div className="min-h-screen bg-background">
       <Navbar />
-
       {/* Hero Section */}
       <section
-        className="bg-[#171F29] py-20"
+        className="border-b border-border bg-muted/40"
         style={{ backgroundImage: `url(${imageUrl})` }}
       >
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h1 className="text-5xl font-bold mb-6 text-[#DFE5E8]">Contact Us</h1>
-          <p className="text-lg text-[#DFE5E8] leading-relaxed">
-            Have questions about Kaido Village? We'd love to hear from you. Send
-            us a message and we'll respond as soon as possible.
-          </p>
+        <div className="container mx-auto px-4 py-16 md:py-24">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-6xl font-serif mb-6 text-white">
+              About Kaido
+            </h1>
+            <p className="text-xl md:text-2xl text-white leading-relaxed text-pretty">
+              A small network of nomad-friendly stays in Niigata, Japan,
+              designed for long stays that balance productivity and play.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold mb-6 text-[#171F29]">
-                Send Us a Message
-              </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium mb-2 text-[#171F29]"
-                  >
-                    Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your name"
-                    className="w-full border-[#25483B]"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium mb-2 text-[#171F29]"
-                  >
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="your.email@example.com"
-                    className="w-full border-[#25483B]"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium mb-2 text-[#171F29]"
-                  >
-                    Subject
-                  </label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                    placeholder="What is this about?"
-                    className="w-full border-[#25483B]"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium mb-2 text-[#171F29]"
-                  >
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us more..."
-                    rows={6}
-                    className="w-full border-[#25483B]"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-[#913d16] text-white hover:bg-[#70473D]"
-                >
-                  Send Message
-                </Button>
-              </form>
-            </div>
-
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold mb-6 text-[#171F29]">
-                Get in Touch
-              </h2>
-              <p className="text-[#70473D] mb-8 leading-relaxed">
-                Whether you're planning your stay or just have questions about
-                our coliving space, we're here to help.
-              </p>
-
-              <div className="space-y-6">
-                <Card className="p-6 border-[#25483B] bg-white">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#913d16] p-3 rounded-lg">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1 text-[#171F29]">
-                        Location
-                      </h3>
-                      <p className="text-sm text-[#70473D]">
-                        885 Mikuni, Yuzawa-machi, Minamiuonuma-gun, Niigata,
-                        Japan
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6 border-[#25483B] bg-white">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#913d16] p-3 rounded-lg">
-                      <Mail className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1 text-[#171F29]">
-                        Email
-                      </h3>
-                      <p className="text-sm text-[#70473D]">
-                        info@souq-hub.co.jp
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-
-                <Card className="p-6 border-[#25483B] bg-white">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#913d16] p-3 rounded-lg">
-                      <Phone className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1 text-[#171F29]">
-                        Phone
-                      </h3>
-                      <p className="text-sm text-[#70473D]">+84 123 456 789</p>
-                    </div>
-                  </div>
-                </Card>
-              </div>
-
-              <div className="mt-8">
-                <h3 className="font-semibold mb-4 text-[#171F29]">Follow Us</h3>
-                <div className="flex gap-3">
-                  <Link
-                    href="https://www.instagram.com/kaido_village/"
-                    className="bg-[#913d16] p-3 rounded-lg text-white hover:bg-[#70473D] transition-colors"
-                  >
-                    <Instagram className="w-5 h-5" />
-                  </Link>
-                </div>
+      {/* Concept Section */}
+      <section className="border-b border-border">
+        <div className="container mx-auto px-4 py-16 md:py-20">
+          <div className="max-w-4xl">
+            <h2 className="text-sm uppercase tracking-wider text-muted-foreground mb-4">
+              Concept
+            </h2>
+            <p className="text-lg leading-relaxed mb-8">
+              Wake up to snow, focus in calm coworking spaces, and wind down in
+              hot springs and local culture. Kaido is designed for overseas
+              digital nomads staying 1 month or longer (≥ 30 nights).
+            </p>
+            <div className="bg-muted/20 p-6 rounded-lg">
+              <h3 className="font-bold mb-3">A Day in the Life</h3>
+              <div className="space-y-2 text-muted-foreground">
+                <p>
+                  <span className="font-medium text-foreground">Morning</span> —
+                  Kagura powder laps, first chair, tree runs, coffee.
+                </p>
+                <p>
+                  <span className="font-medium text-foreground">Evening</span> —
+                  Deep work in the coworking space, fast Wi-Fi, ergonomic desks.
+                </p>
+                <p>
+                  <span className="font-medium text-foreground">Night</span> —
+                  Local culture at small parties and listening bars (e.g., FLAT
+                  Yuzawa).
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Properties Section */}
+      <section className="border-b border-border">
+        <div className="container mx-auto px-4 py-16 md:py-20">
+          <h2 className="text-sm uppercase tracking-wider text-muted-foreground mb-8">
+            Properties
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl">
+            {/* Kaido Yuzawa */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-serif">Kaido Yuzawa</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Onsen hostel within walking distance to ski lifts. Coworking
+                space on site, strong Wi-Fi. Ideal for winter riders and long
+                stays.
+              </p>
+              <div className="pt-4 space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Private Room</span>
+                  <span className="font-medium">¥420,000/mo</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Dormitory</span>
+                  <span className="font-medium">¥238,000/mo</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Kaido Nomad */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-serif">Kaido Nomad</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Quiet rooms for focused routines. Strong Wi-Fi, shared kitchen.
+                Your month-long base for deep work.
+              </p>
+              <div className="pt-4 space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Private Room</span>
+                  <span className="font-medium">¥288,000/mo</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Dormitory</span>
+                  <span className="font-medium">¥144,000/mo</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Kaido Urasa */}
+            <div className="space-y-4">
+              <h3 className="text-2xl font-serif">Kaido Urasa</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Countryside rhythm with access to Niigata's nature. Monthly
+                pricing on request.
+              </p>
+              <div className="pt-4 space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Monthly Rate</span>
+                  <Link href="/contact">
+                    <span className="font-medium">Contact us</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p className="text-sm text-muted-foreground mt-8 max-w-6xl">
+            Minimum stay: 30 nights. Ski season typically runs November–May (~5
+            months). Availability varies by season.
+          </p>
+        </div>
+      </section>
+
+      {/* What's Included Section */}
+      <section className="border-b border-border">
+        <div className="container mx-auto px-4 py-16 md:py-20">
+          <h2 className="text-sm uppercase tracking-wider text-muted-foreground mb-8">
+            What's Included
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="font-medium">Weekly Linen Refresh</h3>
+              <p className="text-sm text-muted-foreground">
+                Fresh linens delivered weekly
+              </p>
+            </div>
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="font-medium">Shared Kitchen Access</h3>
+              <p className="text-sm text-muted-foreground">
+                Fully equipped communal kitchen
+              </p>
+            </div>
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="font-medium">Coworking Space</h3>
+              <p className="text-sm text-muted-foreground">
+                High-speed Wi-Fi & ergonomic desks
+              </p>
+            </div>
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="font-medium">Mail & Parcel Reception</h3>
+              <p className="text-sm text-muted-foreground">
+                Secure package handling
+              </p>
+            </div>
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="font-medium">Long-Stay Discounts</h3>
+              <p className="text-sm text-muted-foreground">
+                Better rates for extended stays
+              </p>
+            </div>
+            <div className="space-y-2">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="font-medium">Unlimited Onsen Access</h3>
+              <p className="text-sm text-muted-foreground">At Kaido Yuzawa</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Section */}
+      <section className="border-b border-border">
+        <div className="container mx-auto px-4 py-16 md:py-20">
+          <div className="max-w-4xl">
+            <h2 className="text-sm uppercase tracking-wider text-muted-foreground mb-8">
+              About SOUQ
+            </h2>
+            <p className="text-lg leading-relaxed mb-8">
+              Kaido is operated by SOUQ株式会社, a Shibuya-based startup that
+              leverages technology to create community-centered urban
+              development. We are a tourism digital transformation company
+              aiming to build sustainable futures through diverse cultures,
+              nature, and communities.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <div>
+                <h3 className="font-medium mb-3">Technology</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Utilizing the latest technology to solve social issues and
+                  create new value.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-3">Sustainability</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Emphasizing harmony between environment, society, and economy
+                  for a sustainable future.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-medium mb-3">Community</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Cherishing the formation of communities where diverse people
+                  connect and grow together.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Location Section */}
       <Footer />
     </div>
   );

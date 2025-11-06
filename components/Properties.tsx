@@ -28,12 +28,16 @@ const Properties = () => {
               description:
                 "Onsen hostel within walking distance to ski lifts. Coworking space on site, strong Wi-Fi. Ideal for winter riders and long stays.",
               img: "/homepage/room.jpg",
+              privatePrice: "¥420,000/mo",
+              dormPrice: "¥238,000/mo",
             },
             {
               title: "Kaido Nomad",
               description:
                 "Quiet rooms for focused routines. Strong Wi-Fi, shared kitchen. Your month-long base for deep work",
               img: "/homepage/cowork.jpeg",
+              privatePrice: "¥288,000/mo",
+              dormPrice: "¥144,000/mo",
             },
             {
               title: "Kaido Urasa",
@@ -56,6 +60,27 @@ const Properties = () => {
               <p className="text-muted-foreground text-sm">
                 {step.description}
               </p>
+              {step.privatePrice ? (
+                <div className="pt-4 space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Private Room</span>
+                    <span className="font-medium">{step.privatePrice}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Dormitory</span>
+                    <span className="font-medium">{step.dormPrice}</span>
+                  </div>
+                </div>
+              ) : (
+                <div className="pt-4 space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-muted-foreground">Monthly Rate</span>
+                    <Link href="/contact">
+                      <span className="font-medium">Contact us</span>
+                    </Link>
+                  </div>
+                </div>
+              )}
             </Card>
           ))}
         </div>

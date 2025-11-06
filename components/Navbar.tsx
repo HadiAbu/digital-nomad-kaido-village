@@ -14,8 +14,8 @@ const Navbar = () => {
   const pathname = usePathname();
   const navItems = [
     { name: "Home", href: "/" },
-    // { name: "Blog", href: "/blog" },
-    // { name: "About", href: "/about" },
+    // { name: "Deals", href: "/deals" },
+    { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
   ];
   return (
