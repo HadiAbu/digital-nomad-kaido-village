@@ -7,7 +7,7 @@ _A modern platform connecting digital nomads with quality accommodations in Kaid
 
 ## Overview
 
-A Next.js-powered platform designed to help digital nomads find their perfect stay in KaidoVillage, Thailand. The platform features modern design, seamless booking experience, and comprehensive information about accommodations and workspaces.
+A Next.js-powered platform designed to help digital nomads find their perfect stay in Kaido Village,Yuzawa, Japan. The platform features modern design, seamless booking experience, and comprehensive information about accommodations and workspaces.
 
 ## ✨ Features
 
