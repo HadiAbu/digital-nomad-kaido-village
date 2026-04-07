@@ -31,7 +31,7 @@ jobs:
         run: |
           aws ec2 authorize-security-group-ingress \
             --group-id sg-0601ffbaa2800d865 \
-            --protocol tcp --port 22 \
+            --protocol tcp --port 2222 \
             --cidr ${{ steps.ip.outputs.ipv4 }}/32
         # Replace sg-xxxxxxxxxxxx with your actual Security Group ID (found in EC2 Console)
 
@@ -60,7 +60,7 @@ jobs:
         run: |
           aws ec2 revoke-security-group-ingress \
             --group-id sg-0601ffbaa2800d865 \
-            --protocol tcp --port 22 \
+            --protocol tcp --port 2222 \
             --cidr ${{ steps.ip.outputs.ipv4 }}/32
 
         
