@@ -44,7 +44,8 @@ jobs:
 
       - name: Push image to GitHub Container Registry
         run: |
-          IMAGE_ID=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tmp=$(echo ${{ env.REGISTRY }} | awk '{print tolower($0)}')
+          IMAGE_ID=$tmp/${{ env.IMAGE_NAME }} 
           docker compose up --dry-run
           docker tag ${{ env.IMAGE_NAME }}-app $IMAGE_ID:latest
           docker push $IMAGE_ID:latest
