@@ -44,7 +44,9 @@ jobs:
 
       - name: Push image to GitHub Container Registry
         run: |
+          docker image ls
           IMAGE_ID=$(echo ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }} | awk '{print tolower($0)}')
           docker compose up --dry-run
-          docker tag ${{ env.IMAGE_NAME }}-app $IMAGE_ID:latest
+          docker tag ghcr.io/hadiabu/digital-nomad-kaido-village:latest $IMAGE_ID:latest
+          echo $IMAGE_ID
           docker push $IMAGE_ID:latest
