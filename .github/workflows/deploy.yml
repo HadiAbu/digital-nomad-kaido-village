@@ -1,0 +1,66 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - master  # This triggers the script every time you push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Pull the code from your repo into the GitHub Runner
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      # 2. Identify the public IP of the GitHub Runner
+      - name: Get GitHub Runner IP
+        id: ip
+        run: echo "ipv4=$(curl -s https://ifconfig.me)" >> $GITHUB_OUTPUT
+
+      # 3. Log into AWS using the secrets you will save in GitHub
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-north-1 # Change this to your EC2's region (e.g., us-west-2)
+
+      # 4. Open Port 22 on your EC2 Security Group for this specific IP
+      - name: Open SSH Port
+        run: |
+          aws ec2 authorize-security-group-ingress \
+            --group-id sg-0601ffbaa2800d865 \
+            --protocol tcp --port 22 \
+            --cidr ${{ steps.ip.outputs.ipv4 }}/32
+        # Replace sg-xxxxxxxxxxxx with your actual Security Group ID (found in EC2 Console)
+
+      # 5. Connect to the EC2 via SSH and run commands
+      - name: SSH and Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            # Navigate to your app folder
+            cd /home/ubuntu/my-app/digital-nomad-kaido-village/
+            
+            # Pull the latest code
+            git pull origin master
+            
+            # Restart your app (Example using PM2 for Node.js or systemd)
+            npm install
+            # pm2 restart my-app
+            echo "Deployment successful!"
+
+      # 6. ALWAYS close the port afterward, even if the deployment fails
+      - name: Close SSH Port
+        if: always()
+        run: |
+          aws ec2 revoke-security-group-ingress \
+            --group-id sg-0601ffbaa2800d865 \
+            --protocol tcp --port 22 \
+            --cidr ${{ steps.ip.outputs.ipv4 }}/32
+
+        
