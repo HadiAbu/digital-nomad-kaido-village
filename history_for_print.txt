@@ -1,0 +1,117 @@
+    1  ssh 
+    2  cd ~/.ssh
+    3  mkdir -p ~/.ssh
+    4  cd ~/.ssh
+    5  clear
+    6  nano cicd.pem
+    7  cat cicd.pem
+    8  cd -
+    9  cd ..
+   10  cd mnt
+   11  pwd
+   12  cd c:
+   13  cd c
+   14  clear
+   15  cd users
+   16  cd borni/
+   17  ls
+   18  cd Downloads/
+   19  clear
+   20  ls
+   21  cp cicd.pem
+   22  cp cicd.pem ~/.ssh
+   23  cd ~/.ssh
+   24  ls
+   25  clear
+   26  ls
+   27  cat cicd.pem 
+   28  clear
+   29  cd ~
+   30  ls
+   31  mkdir projects
+   32  cd projects/
+   33  code .
+   34  ls
+   35  docker-compose build
+   36  dockercompose build
+   37  docker compose build
+   38  apt install docker
+   39  docker
+   40  [200~# Add Docker's official GPG key:
+sudo apt update
+sudo apt install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Architectures: $(dpkg --print-architecture)
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+sudo apt update~
+
+# Add Docker's official GPG key:
+   41  sudo apt update
+   42  sudo apt install ca-certificates curl
+   43  sudo install -m 0755 -d /etc/apt/keyrings
+   44  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+   45  sudo chmod a+r /etc/apt/keyrings/docker.asc
+   46  # Add the repository to Apt sources:
+   47  sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Architectures: $(dpkg --print-architecture)
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+   48  sudo apt update
+   49  
+   50  sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   51  \
+   52  sudo systemctl status docker
+   53  docker ps
+   54  docker com
+   55  docker compose build
+   56  docker compose up -d
+   57  ifconfig
+   58  ipconfig
+   59  sudo apt install net-tools
+   60  ipconfig
+   61  ifconfig
+   62  docker ps
+   63  docker image ls
+   64  docker compose build -d
+   65  docker compose build
+   66  docker image ps
+   67  docker image ls
+   68  git branch
+   69  git add .
+   70  git commit -m "addung build and push script"
+   71  git add .
+   72  git commit -m "containerzation and ci/cd"
+   73  git config --global user.email hadi.abuhamed@gmail.com
+   74  git config --global user.name hadiabu
+   75  git commit -m "containerzation and ci/cd"
+   76  git push origin master
+   77  git add .
+   78  git commit -m "remove old deply.yml"
+   79  git add .
+   80  git commit -m "some changes"
+   81  git push origin master
+   82  git add .
+   83  git commit -m "some changes to lowercase"
+   84  git push origin master
+   85  docker compose ls
+   86  docker image ls
+   87  git add .
+   88  git commit -m "some changes to lowercase"
+   89  git push origin master
+   90  history > history_for_print.txt   

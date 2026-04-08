@@ -12,7 +12,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Kaido Village",
+  title: "Kaido Village Yuzawa",
   description:
     "Work, Live, and Connect in Kaido Village's Premier Coworking Space",
   generator: "v0.app",

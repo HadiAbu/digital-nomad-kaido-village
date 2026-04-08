@@ -50,3 +50,29 @@ jobs:
           docker tag ghcr.io/hadiabu/digital-nomad-kaido-village:latest $IMAGE_ID:latest
           echo $IMAGE_ID
           docker push $IMAGE_ID:latest
+deploy:
+  runs-on: ubuntu-latest
+  needs: build-and-push
+  steps:
+    - name: Deploy to EC2 via SSH
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          # 1. Navigate to your project folder
+          cd ~/digital-nomad-kaido-village
+          
+          # 2. Login to GHCR on the EC2 instance
+          # This uses the actor (you) and the short-lived token to authorize the pull
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          
+          # 3. Pull the latest image
+          docker compose pull
+          
+          # 4. Deploy changes in detached mode
+          docker compose up -d --remove-orphans
+          
+          # 5. Cleanup to prevent disk space issues on EC2
+          docker image prune -f
