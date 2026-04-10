@@ -79,6 +79,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          debug: true
           script: |
             # Navigate to the folder containing your docker-compose.yml
             cd ~/digital-nomad-kaido-village/scripts
