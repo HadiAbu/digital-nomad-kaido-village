@@ -2,8 +2,7 @@
 
 _A modern platform connecting digital nomads with quality accommodations in KaidoVillage_
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/hadiabus-projects/v0-digital-nomad-hostel)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/tZIEWDLDMT3)
+Deployed on AWS-EC2
 
 ## Overview
 
