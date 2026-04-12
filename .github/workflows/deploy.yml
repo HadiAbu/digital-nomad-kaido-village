@@ -6,7 +6,7 @@
 #       - master  # This triggers the script every time you push to the main branch
 
 # jobs:
-#   deploy:
+  # deploy:
 #     runs-on: ubuntu-latest
 #     steps:
 #       # 1. Pull the code from your repo into the GitHub Runner

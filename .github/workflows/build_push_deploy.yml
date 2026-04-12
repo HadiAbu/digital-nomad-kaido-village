@@ -91,6 +91,7 @@ jobs:
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             
             # Pull and Update
+            git pull
             docker compose pull
             docker compose up -d --remove-orphans
             
